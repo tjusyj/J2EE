@@ -1,0 +1,20 @@
+--Mysql:
+CREATE TABLE users (id TINYINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(32) NOT NULL,email VARCHAR(32) NOT NULL,grade TINYINT DEFAULT 1,password VARCHAR(32) NOT NULL);
+INSERT INTO users (name,email,password) VALUES ('tjusyj','tjusyj@gmail.com','123');
+--USER,PASSWORD:
+tjusyj,123456
+--Grant privileges:
+grant all on syj.* to tjusyj@localhost identified by '123456'
+flush privileges;
+--保证out返回数据按html显示而非纯文本
+response.setContentType("text/html;charset=utf-8");
+--COOKIE
+客户端技术-存在浏览器
+默认生命周期会话级别-浏览器关闭消亡
+明文存储-MD5
+--session & cookie
+禁用cookie session也无法使用
+--禁用cookie解决
+encodeURL Use it to ensure session management is handled properly. 
+It takes a URL in, and if the user has cookies turned off, 
+it attaches the jsessionid to the URL in a proper format to be recognized as the session identifier.

@@ -21,6 +21,11 @@ $RECYCLE.BIN/
 # Operating System Files
 # =========================
 
+# Eclipse
+.metadata/* 
+.recommenders/*
+RemoteSystemsTempFiles/*
+
 # OSX
 # =========================
 

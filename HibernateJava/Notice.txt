@@ -1,0 +1,13 @@
+--Flow
+1.DB table
+2.Domain
+3.mapping
+	domain.hbm.xml (the same folder/package with domian.java)
+	hibernate.cfg.xml
+
+--Create Table
+CREATE TABLE employee (id TINYINT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(32) NOT NULL,email VARCHAR(32) NOT NULL,hiredate DATE NOT NULL);
+--oracle
+	sequence
+--mysql
+	identity
