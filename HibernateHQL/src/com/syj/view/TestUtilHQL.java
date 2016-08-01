@@ -2,6 +2,10 @@ package com.syj.view;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import com.syj.domain.Schoolcourse;
 import com.syj.domain.Schoolstudent;
 import com.syj.util.HibernateUtil;
@@ -12,6 +16,14 @@ public class TestUtilHQL {
 		//viewByPage();
 		//saveUtil();
 		//updateUtil(); & delete
+		//example();	//选择21号课程的学生信息
+
+		
+		
+		
+	}
+
+	public static void example() {
 		String hql = "select schoolstudent.sname,schoolcourse.cname from Schoolchoice where schoolcourse.cid=21";
 		List list = HibernateUtil.executeQuery(hql, null);
 		for (int i=0; i<list.size(); i++){

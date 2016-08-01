@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-Aug-2016 19:16:47 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.syj.domain">
+    <class name="Student" table="M_M2O_STUDENT">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="64" />
+        </property>
+        <many-to-one name="department" class="Department" fetch="join">
+            <column name="DEPARTMENT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
