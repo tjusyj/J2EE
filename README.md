@@ -7,5 +7,11 @@ First Commit. Servlet-UserWeb-HibernateJava
 2.UserWeb
 	Show Servlet Development
 	
-3.HibernateJava
+3.HibernateJava (Local Java)
 	Show local java app with Hibernate & MySQL.
+	
+4.HibernateHQL (Local Java)
+	Hibernate Reverse Engine
+	Hibernate HQL
+	HibernateUtil
+	Hibernate API

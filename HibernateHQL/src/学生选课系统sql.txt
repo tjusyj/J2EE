@@ -1,0 +1,51 @@
+--建立学生表
+create table schoolStudent
+(sid int primary key , -- 这是学生的学号
+sname varchar(45) not null, -- 学生姓名
+ssex  char(2) not null,-- 性别
+sdept varchar(10) not null, -- 所在系
+sage  tinyint ,-- 年龄
+saddress varchar(45) -- 住址
+);
+
+--学生表中的数据
+insert into schoolStudent values(20040001,'林青霞','F','计算机系',22,'上海');
+insert into schoolStudent values(20040002,'刘德华','M','外语系',23,'南京');
+insert into schoolStudent values(20050003,'成龙','M','化学系',21,'山东');
+insert into schoolStudent values(20050004,'林可欣','F','计算机系',22,'北京');
+insert into schoolStudent values(20050005,'周华健','M','生物系',24,'山东');
+insert into schoolStudent values(20050006,'周润发','M','数学系',20,'湖北');
+
+--建立课程表
+create table schoolCourse
+(
+cid tinyint primary key ,-- 这是课程号
+cname varchar(50) not null,-- 课程名
+ccredit tinyint -- 课程学分
+);
+
+insert into schoolCourse values(11,'java编程',6);
+insert into schoolCourse values(21,'c++课程',4);
+insert into schoolCourse values(31,'oracle',3);
+insert into schoolCourse values(41,'javaEE',100);
+insert into schoolCourse values(51,'linux',1);
+
+
+--建立选课表
+create table schoolChoice
+(
+stuCourseId tinyint primary key auto_increment,-- 这是一个自增的,表示一次选课
+sid int,-- 学生号
+cid tinyint,-- 课程号
+grade tinyint not null, -- 成绩
+FOREIGN KEY (sid) REFERENCES schoolStudent(sid),
+FOREIGN KEY (cid) REFERENCES schoolCourse(cid)
+);
+
+
+--初始化数据
+insert into schoolChoice (sid,cid,grade) values(20040001,11,90);
+insert into schoolChoice (sid,cid,grade) values(20040001,21,19);
+insert into schoolChoice (sid,cid,grade) values(20050003,21,45);
+insert into schoolChoice (sid,cid,grade) values(20050004,41,99);
+insert into schoolChoice (sid,cid,grade) values(20050006,11,39);

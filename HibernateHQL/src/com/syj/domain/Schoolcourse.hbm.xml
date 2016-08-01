@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 31-Jul-2016 20:50:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.syj.domain.Schoolcourse" table="schoolcourse" catalog="syj" optimistic-lock="version">
+        <id name="cid" type="byte">
+            <column name="cid" />
+            <generator class="assigned" />
+        </id>
+        <property name="cname" type="string">
+            <column name="cname" length="50" not-null="true" />
+        </property>
+        <property name="ccredit" type="java.lang.Byte">
+            <column name="ccredit" />
+        </property>
+        <set name="schoolchoices" table="schoolchoice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cid" />
+            </key>
+            <one-to-many class="com.syj.domain.Schoolchoice" />
+        </set>
+    </class>
+</hibernate-mapping>

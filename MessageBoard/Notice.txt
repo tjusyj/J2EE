@@ -1,0 +1,10 @@
+1.用户表
+CREATE TABLE boardUser(id TINYINT PRIMARY KEY,
+	name VARCHAR(32) NOT NULL, password VARCHAR(32) NOT NULL);
+
+2. 消息表
+CREATE TABLE boardInfo(id TINYINT PRIMARY KEY, sender VARCHAR(32) NOT NULL,
+	receiver VARCHAR(32), content VARCHAR(512),
+	sendtime DATETIME DEFAULT NOW(), attachment VARCHAR(128) NOT NULL);
+	
+3.引入 Hibernate & MySQL 包

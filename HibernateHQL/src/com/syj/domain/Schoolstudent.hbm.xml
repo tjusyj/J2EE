@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 31-Jul-2016 20:50:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.syj.domain.Schoolstudent" table="schoolstudent" catalog="syj" optimistic-lock="version">
+        <id name="sid" type="int">
+            <column name="sid" />
+            <generator class="assigned" />
+        </id>
+        <property name="sname" type="string">
+            <column name="sname" length="45" not-null="true" />
+        </property>
+        <property name="ssex" type="string">
+            <column name="ssex" length="2" not-null="true" />
+        </property>
+        <property name="sdept" type="string">
+            <column name="sdept" length="10" not-null="true" />
+        </property>
+        <property name="sage" type="java.lang.Byte">
+            <column name="sage" />
+        </property>
+        <property name="saddress" type="string">
+            <column name="saddress" length="45" />
+        </property>
+        <set name="schoolchoices" table="schoolchoice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sid" />
+            </key>
+            <one-to-many class="com.syj.domain.Schoolchoice" />
+        </set>
+    </class>
+</hibernate-mapping>
