@@ -48,4 +48,6 @@ First Commit. Servlet-UserWeb-HibernateJava
 	Struts + Hibernate 框架 整合案例
 	接口编程 解耦
 	编程思想 WEB(MVC) + SERVICE + DAO + DATA
+	OpenSessionInView 解决懒加载 -- 延长 Session 生命周期至View
+	Hibernate Domain类id使用 Integer -- 使用int时id = 0报错
 <hr/>
