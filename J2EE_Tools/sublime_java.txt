@@ -1,0 +1,14 @@
+1. create runJava.bat
+@ECHO OFF  
+cd %~dp1  
+ECHO Compiling %~nx1.......  
+IF EXIST %~n1.class (  
+DEL %~n1.class  
+)  
+javac %~nx1  
+IF EXIST %~n1.class (  
+ECHO -----------OUTPUT-----------  
+java %~n1  
+)
+
+2. put the file to jdk/bin

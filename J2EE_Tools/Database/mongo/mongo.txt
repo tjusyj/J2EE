@@ -1,0 +1,33 @@
+1.卸载服务
+mongod --remove
+2.安装服务
+mongod --dbpath=C:\data\db --logpath=C:\data\log\mongod.log --install
+3.运行MongoDB服务
+	若无法运行 删除 C:\data\db 下的lock文件
+4.显示所有数据库
+	show dbs;
+5.显示当前数据库
+	db;
+6.连接到指定数据库
+	use student;
+7.概念
+|---RDBMS---|---Mongo---|
+|-----------------------|
+|---table---|collection-|
+|---column--|----key----|
+|---value---|---value---|
+|---record--|--document-|
+8.查找
+	db.runoob.find({"x":10});
+9.AND
+	db.runoob.find({"x":10,"y":11});
+10:OR
+	db.runoob.find($or: [{"x":10},{"y",11}]);
+11.example
+	db.runoob.find({"z": {$gt:50}, $or: [{"x": 10},{"y": 11}]}).pretty();
+	where z>50 AND (x = 10 OR y = 11);
+12.条件操作符
+>  - $gt
+<  - $lt
+>= - $gte
+<= - $lte

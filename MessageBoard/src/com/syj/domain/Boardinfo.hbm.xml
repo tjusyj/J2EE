@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-Aug-2016 18:27:03 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.syj.domain.Boardinfo" table="boardinfo" catalog="syj" optimistic-lock="version">
+        <id name="id" type="byte">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="sender" type="string">
+            <column name="sender" length="32" not-null="true" />
+        </property>
+        <property name="receiver" type="string">
+            <column name="receiver" length="32" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="512" />
+        </property>
+        <property name="sendtime" type="timestamp">
+            <column name="sendtime" length="19" />
+        </property>
+        <property name="attachment" type="string">
+            <column name="attachment" length="128" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

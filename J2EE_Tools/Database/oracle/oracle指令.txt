@@ -1,0 +1,22 @@
+SQL> ALTER USER hr ACCOUNT UNLOCK;
+SQL> ALTER USER hr IDENTIFIED BY 123456;
+SQL> connect hr/123456;
+SQL> SHOW USER;
+SQL> EXIT;
+SQL> PASSWORD hr;
+SQL> SET LINESIZE 140;
+
+
+char
+varchar2
+number
+date
+timestamp
+blob
+
+create table student (id number(4),name varchar2(20),sex char(2),birthday date); 
+ALTER TABLE student add (classId NUMBER(2)); 
+ALTER TABLE student MODIFY (xm VARCHAR2(30));  
+ALTER TABLE student DROP COLUMN sal; //不建议,删除会改变顺序
+RENAME student TO stu; 
+DROP TABLE student; 

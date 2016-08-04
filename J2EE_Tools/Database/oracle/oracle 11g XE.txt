@@ -1,0 +1,8 @@
+Oracle 11g XE 是 Oracle 数据库的免费版本，支持标准版的大部分功能
+11g XE 提供 Windows 和 Linux 版本。
+
+做为免费的 Oracle 数据库版本，XE 的限制是：
+	最大数据库大小为 11 GB 
+	可使用的最大内存是 1G
+	一台机器上只能安装一个 XE 实例
+	XE 只能使用单 CPU，无法在多CPU上进行分布处理

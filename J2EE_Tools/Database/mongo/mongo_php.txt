@@ -1,0 +1,9 @@
+DO NOT USE PHP7!!!
+
+1.安装配置mongod服务
+2.下载mongodb驱动,下载与php版本对应的DLL
+	旧版本: https://pecl.php.net/package/mongo
+	新版本: https://pecl.php.net/package/mongodb
+	php5 使用旧版本 -- 新版本能识别但无法使用
+3.放入php的ext文件夹 配置php.ini
+4.重启apache

@@ -18,13 +18,40 @@ public class TestMain {
 			//1. 使用 m2o
 			//2. 增加 set o2m
 				//search_o2m_set();
+		
 		//配置 set 后,使用级联添加 
 		//需要增加配置: <set name="students" cascade="save-update">
-		cascade_add();
+		//cascade_add();
 		
+		//级联删除
+		//<set name="students" cascade="delete">
+		//<set name="students" cascade="all">
+		cascade_delete();
+	}
+
+	public static void cascade_delete() {
+		Session session = null;
+		Transaction tx = null;
+		try {
+			session = HibernateUtil.openSession();
+			tx = session.beginTransaction();
+			
+			Department department = session.get(Department.class, 2);
+			session.delete(department);
+			
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			if(session!=null&&session.isOpen()){
+				session.close();
+			}
+		}
 	}
 
 	public static void cascade_add() {
+		
 		Session session = null;
 		Transaction tx = null;
 		try {

@@ -1,0 +1,16 @@
+DO NOT USE PHP7!!!
+
+PHP:
+1.oracle连接失败是因为php自带的php_oci8_12c.dll有问题
+2.下载合适的DLL文件 apache需要线程安全版本 对应oracle版本
+	http://windows.php.net/downloads/pecl/releases/oci8/2.0.8/
+3.将下载的php_oci8.dll,php_oci8_11g.dll,php_oci8_12c.dll放入php的ext文件夹
+4.加载对应DLL模块
+	不论使用oracle 哪个版本,使用php_oci8.dll
+	extension=php_oci8.dll
+	否则有可能测试通过但无法连接
+5.php文件夹加入$PATH
+6.打开CMD,用下面命令测试
+	php --ri oci8
+7.instantclient内oraociei11.dll放入system32
+8.done!

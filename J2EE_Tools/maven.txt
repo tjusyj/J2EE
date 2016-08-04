@@ -1,0 +1,8 @@
+1.下载安装包解压
+2.添加环境变量
+3.创建项目
+	mvn archetype:generate
+	注意使用 tjusyj 则会创建在 C:\Users\tjusyj\ 中
+	使用 administrator 会创建到system32
+4.创建web项目
+mvn archetype:generate -DgroupId=com.syj -DartifactId=TestWeb -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false

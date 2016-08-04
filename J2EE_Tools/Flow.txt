@@ -1,0 +1,18 @@
+1. JDK
+	JAVA_HOME
+	CLASSPATH: .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar
+2. ECLIPSE
+	Plugins:
+	1.在preference里设置server
+	2.在界面下方控制台server中新建server
+	3.右键server - open 
+	4.Server Location - Use Tomcat Installation
+	5.使用Data Management连接数据库
+	6.安装Jboss Tools - Hibernate Tools
+3. ASpache Tomcat
+4. Apache
+5. PHP
+4. Hibernate
+5. MySQL
+6. Oracle
+7. 

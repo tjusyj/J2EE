@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-Aug-2016 18:27:03 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping package="com.syj.domain">
+    <class name="Message" table="NOTE_MESSAGE" catalog="syj" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="content" type="java.lang.String">
+            <column name="content" length="512" />
+        </property>
+        <property name="time" type="java.util.Date">
+            <column name="time" />
+        </property>
+        <many-to-one name="sender" class="User" fetch="join">
+        	<column name="sender_id" />
+        </many-to-one>
+        <many-to-one name="receiver" class="User" fetch="join">
+        	<column name="receiver_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+1.上网下载
+http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html
+JDBC Driver Downloads - 11g
+ 	Oracle Database 11g Release 2 (11.2.0.4), (11.2.0.3), (11.2.0.2.0), (11.2.0.1.0) drivers
+	
+2.安装目录oracle/product/11.2.0/server/jdbc/lib
+ojdbc6.jar <= oracle 11g

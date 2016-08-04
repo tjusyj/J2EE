@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.devMode" value="true" />
+
+    <package name="com.syj.action" namespace="/" extends="struts-default">
+    
+    	<action name="login" class="com.syj.action.LoginAction" method="execute">
+    		<result name="success" type="redirectAction">gotoMessageBoard</result>
+    		<result name="logout">/WEB-INF/login.jsp</result>
+    		<result name="err">/WEB-INF/login.jsp</result>
+    	</action>
+    	
+    	<action name="gotoMessageBoard" class="com.syj.action.GotoMessageBoardAction" method="execute">
+    		<result name="success">/WEB-INF/MessageBoard.jsp</result>
+    		<result name="err">/WEB-INF/login.jsp</result>
+    	</action>
+    	
+    	<action name="message" class="com.syj.action.MessageAction" method="execute">
+    		<result name="gotoAddMessage">/WEB-INF/MessageAdd.jsp</result>
+    		<result name="gotoLogin">/WEB-INF/login.jsp</result>
+    	</action>
+    	
+    </package>
+    
+</struts>
