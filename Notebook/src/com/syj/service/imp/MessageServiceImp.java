@@ -14,8 +14,14 @@ public class MessageServiceImp extends BaseServiceImp implements MessageServiceI
 		String hql = "from Message where receiver.id=? or receiver.id=0";
 		String[] parameters = {"integer:"+u.getId()};
 		@SuppressWarnings("unchecked")
-		List<Message> messages = HibernateUtil.executeQuery(hql, parameters);
+		List<Message> messages = HibernateUtil.executeQueryOpenInView(hql, parameters);
 		return messages;
 	}
+
+	@Override
+	public void addMessage(Message m) {
+		HibernateUtil.save(m);
+	}
+	
 
 }

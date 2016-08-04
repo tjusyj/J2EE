@@ -25,6 +25,7 @@ $RECYCLE.BIN/
 .metadata/* 
 .recommenders/*
 RemoteSystemsTempFiles/*
+Servers/*
 
 # OSX
 # =========================

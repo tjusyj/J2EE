@@ -34,9 +34,9 @@ public final class HibernateUtil {
 	
 public static void closeCurrentSession(){
 		
-		Session s=getCurrentSession();
+		Session s = getCurrentSession();
 		
-		if(s!=null&& s.isOpen() ){
+		if(s!=null && s.isOpen() ){
 			s.close();
 			threadLocal.set(null);
 		}
@@ -114,6 +114,20 @@ public static void closeCurrentSession(){
 		}
 	}
 	
+	public static void updateOpenInView(String hql, String[] parameters){
+		Session session = getCurrentSession();
+		
+		Query query = session.createQuery(hql);
+		if(parameters != null && parameters.length > 0)
+			for(int i=0;i<parameters.length;i++){
+				if(parameters[i].startsWith("byte"))
+					query.setParameter(i, Byte.parseByte(parameters[i].substring(5)));
+				else
+					query.setParameter(i, parameters[i]);
+			}
+		query.executeUpdate();
+	}
+	
 	public static List executeQueryByPage(String hql, String[] parameters, int pageNow, int pageSize){
 		Session session = null;
 		Transaction tx = null;
@@ -176,4 +190,19 @@ public static void closeCurrentSession(){
 		return list;
 	}
 	
+	public static List executeQueryOpenInView(String hql, String[] parameters){
+		Session session = getCurrentSession();
+		Query query = session.createQuery(hql);
+		if(parameters != null && parameters.length > 0)
+			for(int i=0;i<parameters.length;i++){
+				if(parameters[i].startsWith("byte"))
+					query.setParameter(i, Byte.parseByte(parameters[i].substring(5)));
+				else if(parameters[i].startsWith("integer"))
+					query.setParameter(i, Integer.parseInt(parameters[i].substring(8)));
+				else
+					query.setParameter(i, parameters[i]);
+			}
+		List list = query.getResultList();
+		return list;
+	}
 }

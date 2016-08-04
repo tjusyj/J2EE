@@ -13,10 +13,17 @@ public class UserServiceImp extends BaseServiceImp implements UserServiceInterfa
 		String hql = "from User where username=? and password=?";
 		String parameters[] = {u.getUsername(),u.getPassword()};
 		@SuppressWarnings("unchecked")
-		List<User> list = HibernateUtil.executeQuery(hql,parameters);
+		List<User> list = HibernateUtil.executeQueryOpenInView(hql, parameters);
 		if(list.size()==1)
 			return list.get(0);
 		else
 			return null;
+	}
+	
+	public List<User> getUsers(){
+		String hql = "from User";
+		@SuppressWarnings("unchecked")
+		List<User> list = HibernateUtil.executeQueryOpenInView(hql,null);
+		return list;
 	}
 }

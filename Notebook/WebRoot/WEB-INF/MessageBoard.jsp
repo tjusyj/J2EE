@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<font size="5"><a href="/Notebook/">发布信息</a></font>
-<font size="5"><a href="/Notebook/">退出系统</a></font>
+<font size="5"><a href="/Notebook/message.action?flag=gotoAddMessage">发布信息</a></font>
+<font size="5"><a href="/Notebook/login.action?flag=logout">退出系统</a></font>
 welcom user ${user.username}
 <br/>
 <h3>留言信息:</h3>

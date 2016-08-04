@@ -22,7 +22,8 @@
     	
     	<action name="message" class="com.syj.action.MessageAction" method="execute">
     		<result name="gotoAddMessage">/WEB-INF/MessageAdd.jsp</result>
-    		<result name="gotoLogin">/WEB-INF/login.jsp</result>
+    		<result name="addSuccess" type="redirectAction">gotoMessageBoard</result>
+    		<result name="logout">/WEB-INF/login.jsp</result>
     	</action>
     	
     </package>
